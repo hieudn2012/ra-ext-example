@@ -66,6 +66,16 @@ const config = {
             verify: false,
             admits: ['ADMIN_VIEW']
           }
+        },
+        typography: {
+          type: 'item',
+          attribute: {
+            name: 'Typography',
+            icon: 'ArrowRightRounded',
+            path: '/components/typography',
+            verify: false,
+            admits: ['ADMIN_VIEW']
+          }
         }
       }
     },

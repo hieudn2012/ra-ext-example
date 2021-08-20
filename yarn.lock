@@ -9593,7 +9593,7 @@ ra-data-json-server@^3.9.0:
     query-string "^5.1.1"
     ra-core "^3.17.2"
 
-"ra-ext@file:../ra-ext":
+ra-ext@/Users/admin/Desktop/LIBRARY/local/ra-ext:
   version "0.1.12"
   dependencies:
     "@date-io/date-fns" "1.3.13"
