@@ -4,7 +4,7 @@ import { MenuConfig } from 'ra-ext'
 const config = {
   props: {
     fontSize: 14,
-    fontWeight: 600,
+    fontWeight: 500,
     isTranslate: false
   },
   rows: {
@@ -76,55 +76,13 @@ const config = {
             verify: false,
             admits: ['ADMIN_VIEW']
           }
-        }
-      }
-    },
-    list: {
-      type: 'sub',
-      attribute: {
-        name: 'List',
-        icon: 'ListAltOutlined',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      },
-      children: {
-        filter: {
-          type: 'item',
-          attribute: {
-            name: 'Filter',
-            icon: 'FilterListOutlined',
-            path: '/list/filter',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
         },
-        datagrid: {
+        icon: {
           type: 'item',
           attribute: {
-            name: 'Data Grid',
-            icon: 'BallotOutlined',
-            path: '/list/datagrid',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        }
-      }
-    },
-    form: {
-      type: 'sub',
-      attribute: {
-        name: 'Form',
-        icon: 'DynamicFeedOutlined',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      },
-      children: {
-        formWithRedirect: {
-          type: 'item',
-          attribute: {
-            name: 'Form With Redirect',
+            name: 'Icon',
             icon: 'ArrowRightRounded',
-            path: '/form/formwithredirect',
+            path: '/components/icon',
             verify: false,
             admits: ['ADMIN_VIEW']
           }
@@ -140,203 +98,234 @@ const config = {
         admits: ['ADMIN_VIEW']
       },
       children: {
-        text: {
+        base: {
           type: 'item',
           attribute: {
-            name: 'Text',
+            name: 'Base',
             icon: 'ArrowRightRounded',
-            path: '/inputs/text',
+            path: '/inputs/base',
             verify: false,
             admits: ['ADMIN_VIEW']
           }
         },
-        boolean: {
+        markdown: {
           type: 'item',
           attribute: {
-            name: 'Boolean',
+            name: 'Markdown',
             icon: 'ArrowRightRounded',
-            path: '/inputs/boolean',
+            path: '/inputs/markdown',
+            verify: false,
+            admits: ['ADMIN_VIEW']
+          }
+        },
+        picker: {
+          type: 'item',
+          attribute: {
+            name: 'Picker',
+            icon: 'ArrowRightRounded',
+            path: '/inputs/picker',
+            verify: false,
+            admits: ['ADMIN_VIEW']
+          }
+        },
+        dateRagePicker: {
+          type: 'item',
+          attribute: {
+            name: 'Date Rage Picker',
+            icon: 'ArrowRightRounded',
+            path: '/inputs/dateragepicker',
             verify: false,
             admits: ['ADMIN_VIEW']
           }
         }
-      }
-    },
-    fields: {
-      type: 'sub',
-      attribute: {
-        name: 'Fields',
-        icon: 'FlipCameraAndroidOutlined',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      },
-      children: {
-        text: {
-          type: 'item',
-          attribute: {
-            name: 'Text',
-            icon: 'ArrowRightRounded',
-            path: '/inputs/text',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        },
-        boolean: {
-          type: 'item',
-          attribute: {
-            name: 'Boolean',
-            icon: 'ArrowRightRounded',
-            path: '/inputs/boolean',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        }
-      }
-    },
-    common: {
-      type: 'sub',
-      attribute: {
-        name: 'Common',
-        icon: 'RestaurantMenuRounded',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      },
-      children: {
-        menu: {
-          type: 'item',
-          attribute: {
-            name: 'Menu',
-            icon: 'ArrowRightRounded',
-            path: '/common/menu',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        }
-      }
-    },
-    tables: {
-      type: 'item',
-      attribute: {
-        name: 'Table',
-        icon: 'TableChartOutlined',
-        path: '/tables',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      }
-    },
-    charts: {
-      type: 'item',
-      attribute: {
-        name: 'Charts',
-        icon: 'AssessmentOutlined',
-        path: '/charts',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      }
-    },
-    authentications: {
-      type: 'sub',
-      attribute: {
-        name: 'Authentications',
-        icon: 'FingerprintOutlined',
-        path: '/authentications',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      },
-      children: {
-        login: {
-          type: 'item',
-          attribute: {
-            name: 'Login',
-            icon: 'LockOpenOutlined',
-            path: '/authentications/login',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        },
-        register: {
-          type: 'item',
-          attribute: {
-            name: 'Register',
-            icon: 'AddToPhotosOutlined',
-            path: '/authentications/register',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        },
-        recoverPassword: {
-          type: 'item',
-          attribute: {
-            name: 'Recover Password',
-            icon: 'CompassCalibrationOutlined',
-            path: '/authentications/recoverPassword',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        },
-        lockScreen: {
-          type: 'item',
-          attribute: {
-            name: 'Lock Screen',
-            icon: 'NoEncryptionOutlined',
-            path: '/authentications/lockScreen',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        },
-        logout: {
-          type: 'item',
-          attribute: {
-            name: 'Logout',
-            icon: 'ControlCameraOutlined',
-            path: '/authentications/logout',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        }
-      }
-    },
-    setting: {
-      type: 'sub',
-      attribute: {
-        name: 'Settings',
-        icon: 'SettingsOutlined',
-        verify: false,
-        admits: ['ADMIN_VIEW']
-      },
-      children: {
-        account: {
-          type: 'item',
-          attribute: {
-            name: 'Theme',
-            icon: 'ColorLensOutlined',
-            path: '/setting/theme',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        },
-        user: {
-          type: 'item',
-          attribute: {
-            name: 'Language',
-            icon: 'GTranslateOutlined',
-            path: '/setting/language',
-            verify: false,
-            admits: ['ADMIN_VIEW']
-          }
-        }
-      }
-    },
-    references: {
-      type: 'item',
-      attribute: {
-        name: 'References',
-        icon: 'CachedOutlined',
-        path: '/references',
-        verify: false,
-        admits: ['ADMIN_VIEW']
       }
     }
+    // list: {
+    //   type: 'sub',
+    //   attribute: {
+    //     name: 'List',
+    //     icon: 'ListAltOutlined',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   },
+    //   children: {
+    //     filter: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Filter',
+    //         icon: 'FilterListOutlined',
+    //         path: '/list/filter',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     },
+    //     datagrid: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Data Grid',
+    //         icon: 'BallotOutlined',
+    //         path: '/list/datagrid',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     }
+    //   }
+    // },
+    // form: {
+    //   type: 'sub',
+    //   attribute: {
+    //     name: 'Form',
+    //     icon: 'DynamicFeedOutlined',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   },
+    //   children: {
+    //     formWithRedirect: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Form With Redirect',
+    //         icon: 'ArrowRightRounded',
+    //         path: '/form/formwithredirect',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     }
+    //   }
+    // },
+    // fields: {
+    //   type: 'sub',
+    //   attribute: {
+    //     name: 'Fields',
+    //     icon: 'FlipCameraAndroidOutlined',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   },
+    //   children: {
+    //     base: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Base',
+    //         icon: 'ArrowRightRounded',
+    //         path: '/fields/base',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     }
+    //   }
+    // },
+    // common: {
+    //   type: 'sub',
+    //   attribute: {
+    //     name: 'Common',
+    //     icon: 'RestaurantMenuRounded',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   },
+    //   children: {
+    //     menu: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Menu',
+    //         icon: 'ArrowRightRounded',
+    //         path: '/common/menu',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     }
+    //   }
+    // },
+    // tables: {
+    //   type: 'item',
+    //   attribute: {
+    //     name: 'Table',
+    //     icon: 'TableChartOutlined',
+    //     path: '/tables',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   }
+    // },
+    // charts: {
+    //   type: 'item',
+    //   attribute: {
+    //     name: 'Charts',
+    //     icon: 'AssessmentOutlined',
+    //     path: '/charts',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   }
+    // },
+    // authentications: {
+    //   type: 'sub',
+    //   attribute: {
+    //     name: 'Authentications',
+    //     icon: 'FingerprintOutlined',
+    //     path: '/authentications',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   },
+    //   children: {
+    //     login: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Login',
+    //         icon: 'LockOpenOutlined',
+    //         path: '/authentications/login',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     },
+    //     register: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Register',
+    //         icon: 'AddToPhotosOutlined',
+    //         path: '/authentications/register',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     },
+    //     recoverPassword: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Recover Password',
+    //         icon: 'CompassCalibrationOutlined',
+    //         path: '/authentications/recoverPassword',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     },
+    //     lockScreen: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Lock Screen',
+    //         icon: 'NoEncryptionOutlined',
+    //         path: '/authentications/lockScreen',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     },
+    //     logout: {
+    //       type: 'item',
+    //       attribute: {
+    //         name: 'Logout',
+    //         icon: 'ControlCameraOutlined',
+    //         path: '/authentications/logout',
+    //         verify: false,
+    //         admits: ['ADMIN_VIEW']
+    //       }
+    //     }
+    //   }
+    // },
+    // references: {
+    //   type: 'item',
+    //   attribute: {
+    //     name: 'References',
+    //     icon: 'CachedOutlined',
+    //     path: '/references',
+    //     verify: false,
+    //     admits: ['ADMIN_VIEW']
+    //   }
+    // }
   }
 }
 

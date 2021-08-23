@@ -1,6 +1,36 @@
 import React from 'react'
-import { Button } from 'ra-ext'
+import { Button, MarkdownField } from 'ra-ext'
 import { Box } from '@material-ui/core'
+
+const mark = `### Source
+\`\`\`tsx
+import { Button } from 'ra-ext'
+
+<Button
+  startIcon='ErrorOutline'
+  endIcon='ErrorOutline'
+  variant='text'
+  color='error'
+  size='medium'
+  loading
+  mr={1}
+  mt={1}
+>
+  Danger
+</Button>
+\`\`\`
+
+### Props
+- Extends Material: [\`Button\`](https://material-ui.com/api/button/#button-api)
+- startIcon: string [\`Material Icon\`](https://material-ui.com/components/material-icons/#material-icons)
+- endIcon: string [\`Material Icon\`](https://material-ui.com/components/material-icons/#material-icons)
+- color: \`inherit | primary | secondary | default | error | warning | success | disable\`
+- loading: boolean
+- ml: 0 | 1 | 2 | 3 | 4 | 5
+- mr: 0 | 1 | 2 | 3 | 4 | 5
+- mt: 0 | 1 | 2 | 3 | 4 | 5
+- mb: 0 | 1 | 2 | 3 | 4 | 5
+`
 
 export default function ButtonView() {
   return (
@@ -228,6 +258,9 @@ export default function ButtonView() {
         >
           Default
         </Button>
+      </Box>
+      <Box mt={5}>
+        <MarkdownField source={mark} />
       </Box>
     </div>
   )

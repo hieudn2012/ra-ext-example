@@ -60,7 +60,8 @@ const listConfig = {
       ui: { widget: 'search' },
       variant: 'outlined',
       label: 'Title',
-      alwaysOn: true
+      alwaysOn: true,
+      iconPosition: 'start'
     },
     userId: {
       ui: { widget: 'component' },

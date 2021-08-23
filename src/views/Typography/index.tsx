@@ -1,5 +1,23 @@
 import React from 'react'
-import { Typography as TypographyUI } from 'ra-ext'
+import { MarkdownField, Typography as TypographyUI } from 'ra-ext'
+import { Box } from '@material-ui/core'
+
+const mark = `### Source
+\`\`\`tsx
+import { Typography } from 'ra-ext'
+
+<Typography variant='h4' color='warning'>
+  Color warning
+</Typography>
+
+<Typography variant='h4' color='warning' translateText='message.text.warning' />
+\`\`\`
+
+### Props
+- Extends Material: [\`Typography\`](https://material-ui.com/api/typography/)
+- color: \`disable | error | inherit | initial | primary | | secondary | success | | warning | textPrimary | textSecondary | undefined\`
+- translateText: \`string\`
+`
 
 export default function Typography() {
   return (
@@ -73,6 +91,9 @@ export default function Typography() {
       <TypographyUI display='block' variant='h4' color='warning'>
         Color warning
       </TypographyUI>
+      <Box mt={5}>
+        <MarkdownField source={mark} />
+      </Box>
     </div>
   )
 }

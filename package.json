@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
+    "@uiw/react-md-editor": "^3.4.14",
     "moment": "^2.29.1",
     "ra-data-fakerest": "^3.13.5",
     "ra-data-json-server": "^3.9.0",
@@ -22,7 +23,7 @@
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "coppy-ra-ext": "rm -rf /node_modules/ra-ext && cp -R /Users/admin/Desktop/LIBRARY/ra-ext/dist /Users/admin/Desktop/LIBRARY/local/ra-ext-example/node_modules/ra-ext/dist"
+    "coppy-ra-ext": "rm -rf node_modules/ra-ext/dist && cp -R /Users/admin/Desktop/LIBRARY/ra-ext/dist /Users/admin/Desktop/LIBRARY/local/ra-ext-example/node_modules/ra-ext/dist"
   },
   "browserslist": [
     ">0.2%",
