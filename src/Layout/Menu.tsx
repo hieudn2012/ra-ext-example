@@ -139,80 +139,99 @@ const config = {
           }
         }
       }
+    },
+    fields: {
+      type: 'sub',
+      attribute: {
+        name: 'Fields',
+        icon: 'FlipCameraAndroidOutlined',
+        verify: false,
+        admits: ['ADMIN_VIEW']
+      },
+      children: {
+        base: {
+          type: 'item',
+          attribute: {
+            name: 'Base',
+            icon: 'ArrowRightRounded',
+            path: '/fields/base',
+            verify: false,
+            admits: ['ADMIN_VIEW']
+          }
+        }
+      }
+    },
+    list: {
+      type: 'item',
+      attribute: {
+        name: 'List',
+        icon: 'ListAltOutlined',
+        path: '/list',
+        verify: false,
+        admits: ['ADMIN_VIEW']
+      }
+    },
+    Datagrid: {
+      type: 'item',
+      attribute: {
+        name: 'Datagrid',
+        icon: 'ViewCompactOutlined',
+        path: '/Datagrid',
+        verify: false,
+        admits: ['ADMIN_VIEW']
+      }
+    },
+    Filters: {
+      type: 'item',
+      attribute: {
+        name: 'Filters',
+        icon: 'SortRounded',
+        path: '/Filters',
+        verify: false,
+        admits: ['ADMIN_VIEW']
+      }
+    },
+    form: {
+      type: 'item',
+      attribute: {
+        name: 'Form',
+        icon: 'EventNoteOutlined',
+        path: '/form',
+        verify: false,
+        admits: ['ADMIN_VIEW']
+      }
+    },
+    templatePages: {
+      type: 'sub',
+      attribute: {
+        name: 'Template Pages',
+        icon: 'FlipCameraAndroidOutlined',
+        verify: false,
+        admits: ['ADMIN_VIEW']
+      },
+      children: {
+        login: {
+          type: 'item',
+          attribute: {
+            name: 'Login',
+            icon: 'ArrowRightRounded',
+            path: '/templatepages/login',
+            verify: false,
+            admits: ['ADMIN_VIEW']
+          }
+        },
+        register: {
+          type: 'item',
+          attribute: {
+            name: 'Register',
+            icon: 'ArrowRightRounded',
+            path: '/templatepages/register',
+            verify: false,
+            admits: ['ADMIN_VIEW']
+          }
+        }
+      }
     }
-    // list: {
-    //   type: 'sub',
-    //   attribute: {
-    //     name: 'List',
-    //     icon: 'ListAltOutlined',
-    //     verify: false,
-    //     admits: ['ADMIN_VIEW']
-    //   },
-    //   children: {
-    //     filter: {
-    //       type: 'item',
-    //       attribute: {
-    //         name: 'Filter',
-    //         icon: 'FilterListOutlined',
-    //         path: '/list/filter',
-    //         verify: false,
-    //         admits: ['ADMIN_VIEW']
-    //       }
-    //     },
-    //     datagrid: {
-    //       type: 'item',
-    //       attribute: {
-    //         name: 'Data Grid',
-    //         icon: 'BallotOutlined',
-    //         path: '/list/datagrid',
-    //         verify: false,
-    //         admits: ['ADMIN_VIEW']
-    //       }
-    //     }
-    //   }
-    // },
-    // form: {
-    //   type: 'sub',
-    //   attribute: {
-    //     name: 'Form',
-    //     icon: 'DynamicFeedOutlined',
-    //     verify: false,
-    //     admits: ['ADMIN_VIEW']
-    //   },
-    //   children: {
-    //     formWithRedirect: {
-    //       type: 'item',
-    //       attribute: {
-    //         name: 'Form With Redirect',
-    //         icon: 'ArrowRightRounded',
-    //         path: '/form/formwithredirect',
-    //         verify: false,
-    //         admits: ['ADMIN_VIEW']
-    //       }
-    //     }
-    //   }
-    // },
-    // fields: {
-    //   type: 'sub',
-    //   attribute: {
-    //     name: 'Fields',
-    //     icon: 'FlipCameraAndroidOutlined',
-    //     verify: false,
-    //     admits: ['ADMIN_VIEW']
-    //   },
-    //   children: {
-    //     base: {
-    //       type: 'item',
-    //       attribute: {
-    //         name: 'Base',
-    //         icon: 'ArrowRightRounded',
-    //         path: '/fields/base',
-    //         verify: false,
-    //         admits: ['ADMIN_VIEW']
-    //       }
-    //     }
-    //   }
-    // },
     // common: {
     //   type: 'sub',
     //   attribute: {

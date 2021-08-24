@@ -9,6 +9,12 @@ import MarkdownInput from '../views/MarkdownInput'
 import Icon from '../views/Icon'
 import Picker from '../views/Picker'
 import DateRagePickerInput from '../views/DateRagePickerInput'
+import Form from '../views/Form'
+import List from '../views/List'
+import Datagrid from '../views/Datagrid'
+import Filters from '../views/Filters'
+import Login from '../views/Login'
+import Register from '../views/Register'
 
 export default [
   <Route key='button' exact path='/components/button' component={ButtonView} />,
@@ -33,5 +39,16 @@ export default [
     exact
     path='/inputs/dateragepicker'
     component={DateRagePickerInput}
+  />,
+  <Route key='form' exact path='/form' component={Form} />,
+  <Route key='list' exact path='/list' component={List} />,
+  <Route key='datagrid' exact path='/datagrid' component={Datagrid} />,
+  <Route key='filters' exact path='/filters' component={Filters} />,
+  <Route key='login' exact path='/templatepages/login' component={Login} />,
+  <Route
+    key='register'
+    exact
+    path='/templatepages/register'
+    component={Register}
   />
 ]

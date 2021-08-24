@@ -1,7 +1,17 @@
+import React from 'react'
+import { MarkdownField } from 'ra-ext'
+
+const mark = `### Source
+\`\`\`tsx
 import * as React from 'react'
 import { get } from 'lodash'
-import { TextField, ReferenceField } from 'react-admin'
-import { ListConfig, SelectInput, ReferenceInput } from 'ra-ext'
+import {
+  TextField,
+  ReferenceField,
+  ReferenceInput,
+  SelectInput
+} from 'react-admin'
+import { ListConfig } from 'ra-ext'
 import { Typography } from '@material-ui/core'
 
 const FieldTitle = ({ record, source }: any) => (
@@ -77,3 +87,13 @@ const listConfig = {
 export const PostList = (props: any) => (
   <ListConfig {...props} config={listConfig} />
 )
+\`\`\`
+`
+
+export default function List() {
+  return (
+    <div>
+      <MarkdownField source={mark} />
+    </div>
+  )
+}

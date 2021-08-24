@@ -1,4 +1,9 @@
 import React from 'react'
+import { MarkdownField } from 'ra-ext'
+
+const mark = `### Source
+\`\`\`tsx
+import React from 'react'
 import { Create, required } from 'react-admin'
 import { FormConfig } from 'ra-ext'
 import { validate } from './validate'
@@ -55,7 +60,6 @@ const config = {
             size: 'small'
           },
           format: 'DD/MM/YYYY',
-          isTranslate: false,
           duration: 2,
           validate: [required()],
           isClear: true
@@ -70,3 +74,13 @@ export const PostCreate = (props: any) => (
     <FormConfig config={config} />
   </Create>
 )
+\`\`\`
+`
+
+export default function Form() {
+  return (
+    <div>
+      <MarkdownField source={mark} />
+    </div>
+  )
+}

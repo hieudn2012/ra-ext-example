@@ -123,6 +123,7 @@ export default function ButtonView() {
           size='medium'
           mr={1}
           mt={1}
+          loading
         >
           Danger
         </Button>
@@ -183,6 +184,7 @@ export default function ButtonView() {
           size='medium'
           mr={1}
           mt={1}
+          loading
         >
           Default
         </Button>
@@ -255,6 +257,7 @@ export default function ButtonView() {
           size='medium'
           mr={1}
           mt={1}
+          loading
         >
           Default
         </Button>
