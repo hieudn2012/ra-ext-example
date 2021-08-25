@@ -1,12 +1,7 @@
 import * as React from 'react'
-import { get } from 'lodash'
 import { TextField, ReferenceField } from 'react-admin'
 import { ListConfig, SelectInput, ReferenceInput } from 'ra-ext'
-import { Typography } from '@material-ui/core'
 
-const FieldTitle = ({ record, source }: any) => (
-  <Typography>{get(record, source)}</Typography>
-)
 const FieldUserId = ({ source }: any) => {
   return (
     <ReferenceField label='User' source={source} reference='users'>
@@ -45,9 +40,14 @@ const listConfig = {
       component: FieldUserId
     },
     title: {
-      ui: { widget: 'component' },
-      label: 'Title',
-      component: FieldTitle
+      ui: { widget: 'text' },
+      label: 'Title'
+    },
+    createdAt: {
+      ui: { widget: 'common' },
+      label: 'Created',
+      format: 'DD/MM/yyyy',
+      emptyValue: '-'
     }
   },
   filters: {
@@ -71,6 +71,17 @@ const listConfig = {
         margin: 'dense'
       }
     }
+  },
+  filterWithTabs: {
+    configs: {
+      source: 'status',
+      variant: 'fullWidth'
+    },
+    tabs: [
+      { id: 'PENDING', name: 'PENDING' },
+      { id: 'ACTIVE', name: 'ACTIVE' },
+      { id: 'DEACTIVE', name: 'DEACTIVE' }
+    ]
   }
 }
 

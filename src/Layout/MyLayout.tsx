@@ -14,10 +14,23 @@ import {
   ThemeProvider,
   createTheme
 } from '@material-ui/core/styles'
-import { darkTheme, lightTheme, ThemeToggle } from 'ra-ext'
+import { darkTheme, Icon, lightTheme, ThemeToggle } from 'ra-ext'
 import Menu from './Menu'
-import { Box, Divider, Typography, useMediaQuery } from '@material-ui/core'
+import {
+  Box,
+  Divider,
+  MenuItem,
+  Typography,
+  useMediaQuery
+} from '@material-ui/core'
 import SupervisorAccountRoundedIcon from '@material-ui/icons/SupervisorAccountRounded'
+import {
+  LoadingIndicator,
+  ReduxState,
+  setSidebarVisibility,
+  UserMenu
+} from 'react-admin'
+import { useSelector, useDispatch } from 'react-redux'
 
 const drawerWidth = 240
 
@@ -59,11 +72,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       marginRight: theme.spacing(2)
-      // [theme.breakpoints.up('md')]: {
-      //   display: 'none',
-      // },
     },
-    // necessary for content to be below app bar
     toolbar: {
       minHeight: 50
     },
@@ -82,6 +91,9 @@ const useStyles = makeStyles((theme: Theme) =>
     content: {
       flexGrow: 1,
       padding: theme.spacing(3)
+    },
+    mr1: {
+      marginRight: 16
     }
   })
 )
@@ -98,20 +110,19 @@ interface Props {
 const Layout = (props: Props) => {
   const { window, children } = props
   const theme = useTheme()
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [desktopOpen, setDesktopOpen] = React.useState(true)
 
   const isSm = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
 
   const isMd = useMediaQuery((theme: Theme) => theme.breakpoints.up('md'))
 
+  const open = useSelector<ReduxState>(
+    (state) => state.admin.ui.sidebarOpen || false
+  )
+
+  const dispatch = useDispatch()
+
   const handleDrawerToggle = () => {
-    if (isSm) {
-      setMobileOpen(!mobileOpen)
-    }
-    if (isMd) {
-      setDesktopOpen(!desktopOpen)
-    }
+    dispatch(setSidebarVisibility(!open))
   }
 
   const container =
@@ -124,7 +135,7 @@ const Layout = (props: Props) => {
       <CssBaseline />
       <AppBar
         position='fixed'
-        className={desktopOpen ? classes.appBar : classes.appBarHiden}
+        className={isMd && open ? classes.appBar : classes.appBarHiden}
       >
         <Toolbar>
           <IconButton
@@ -138,10 +149,21 @@ const Layout = (props: Props) => {
           </IconButton>
           <Box flexGrow={1} />
           <ThemeToggle />
+          <LoadingIndicator />
+          <UserMenu icon={<Icon source='AssignmentIndOutlined' />}>
+            <MenuItem>
+              <Icon source='PowerSettingsNewRounded' className={classes.mr1} />
+              Logout
+            </MenuItem>
+            <MenuItem>
+              <Icon source='SettingsOutlined' className={classes.mr1} />
+              Setting
+            </MenuItem>
+          </UserMenu>
         </Toolbar>
       </AppBar>
       <nav
-        className={desktopOpen ? classes.drawer : classes.drawerHiden}
+        className={isMd && open ? classes.drawer : classes.drawerHiden}
         aria-label='mailbox folders'
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -150,7 +172,7 @@ const Layout = (props: Props) => {
             container={container}
             variant='temporary'
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen && !isMd}
+            open={!!(open && isSm)}
             onClose={handleDrawerToggle}
             classes={{
               paper: classes.drawerPaper
@@ -167,7 +189,7 @@ const Layout = (props: Props) => {
         <Hidden smDown implementation='css'>
           <Drawer
             classes={{
-              paper: desktopOpen ? classes.drawerPaper : classes.drawerHiden
+              paper: isMd && open ? classes.drawerPaper : classes.drawerHiden
             }}
             variant='permanent'
             open
@@ -181,7 +203,7 @@ const Layout = (props: Props) => {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
+      <main className={classes.content} id='contentmain'>
         <div className={classes.toolbar} />
         {children}
       </main>
