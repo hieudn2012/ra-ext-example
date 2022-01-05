@@ -1,6 +1,11 @@
 import * as React from 'react'
-import { DataGridConfig, FiltersConfig, FilterWithTabsConfig } from 'ra-ext'
-import { List } from 'react-admin'
+import {
+  DataGridConfig,
+  FiltersConfig,
+  FilterWithTabsConfig,
+  FilterWithTabsConfigProps
+} from 'ra-ext'
+import { List, ListProps } from 'react-admin'
 
 const listConfig = {
   configs: {
@@ -52,7 +57,7 @@ const filterConfig = {
   }
 }
 
-const filterWithTabsConfig = {
+const filterWithTabsConfig: FilterWithTabsConfigProps['config'] = {
   configs: {
     source: 'status',
     variant: 'fullWidth'
@@ -64,11 +69,11 @@ const filterWithTabsConfig = {
   ]
 }
 
-export const UserList: React.FC<any> = (props) => {
+export const UserList: React.FC<ListProps> = (props) => {
   return (
     <List {...props} filters={<FiltersConfig config={filterConfig} />}>
       <React.Fragment>
-        <FilterWithTabsConfig {...props} config={filterWithTabsConfig} />
+        <FilterWithTabsConfig config={filterWithTabsConfig} {...props} />
         <DataGridConfig config={listConfig} />
       </React.Fragment>
     </List>

@@ -5,7 +5,7 @@ const mark = `### Source
 \`\`\`tsx
 import * as React from 'react'
 import { List, ListProps } from 'react-admin'
-import { DatagridConfig, FiltersConfig } from 'ra-ext'
+import { DatagGidConfig, FiltersConfig } from 'ra-ext'
 
 const dataGridConfig = {
   configs: {},
@@ -50,7 +50,7 @@ const filtersConfig = {
 
 export const PostList = (props) => (
   <List {...props} filters={<FiltersConfig config={filtersConfig} />}>
-    <DatagridConfig config={dataGridConfig} />
+    <DatagGidConfig config={dataGridConfig} />
   </List>
 )
 \`\`\`

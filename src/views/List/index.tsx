@@ -81,6 +81,17 @@ const listConfig = {
         margin: 'dense'
       }
     }
+  },
+  filterWithTabs: {
+    configs: {
+      source: 'status',
+      variant: 'fullWidth'
+    },
+    tabs: [
+      { id: 'PENDING', name: 'PENDING' },
+      { id: 'ACTIVE', name: 'ACTIVE' },
+      { id: 'DEACTIVE', name: 'DEACTIVE' }
+    ]
   }
 }
 
