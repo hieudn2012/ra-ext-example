@@ -10,7 +10,7 @@
     "moment": "^2.29.1",
     "ra-data-fakerest": "^3.13.5",
     "ra-data-json-server": "^3.9.0",
-    "ra-ext": "/Users/admin/Desktop/LIBRARY/local/ra-ext",
+    "ra-ext": "^0.1.20",
     "react": "^17.0.0",
     "react-admin": "^3.9.0",
     "react-dom": "^17.0.0",
@@ -23,7 +23,7 @@
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "coppy-ra-ext": "rm -rf node_modules/ra-ext/dist && cp -R /Users/admin/Desktop/LIBRARY/ra-ext/dist /Users/admin/Desktop/LIBRARY/local/ra-ext-example/node_modules/ra-ext/dist"
+    "coppy-ra-ext": "rm -rf node_modules/ra-ext/dist && cp -R /Users/admin/Documents/CODE/SAMO/ra-ext/dist /Users/admin/Documents/CODE/OPEN_SOURCE/ra-ext-example/node_modules/ra-ext/dist"
   },
   "browserslist": [
     ">0.2%",

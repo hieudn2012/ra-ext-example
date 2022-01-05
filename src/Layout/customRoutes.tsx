@@ -15,6 +15,7 @@ import Datagrid from '../views/Datagrid'
 import Filters from '../views/Filters'
 import Login from '../views/Login'
 import Register from '../views/Register'
+import Export from '../views/Export'
 
 export default [
   <Route key='button' exact path='/components/button' component={ButtonView} />,
@@ -50,5 +51,6 @@ export default [
     exact
     path='/templatepages/register'
     component={Register}
-  />
+  />,
+  <Route key='export' exact path='/common/export' component={Export} />
 ]

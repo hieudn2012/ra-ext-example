@@ -231,6 +231,27 @@ const config = {
           }
         }
       }
+    },
+    common: {
+      type: 'sub',
+      attribute: {
+        name: 'Common',
+        icon: 'ViewComfyOutlined',
+        verify: false,
+        admits: ['ADMIN_VIEW']
+      },
+      children: {
+        export: {
+          type: 'item',
+          attribute: {
+            name: 'Export',
+            icon: 'ImportExportOutlined',
+            path: '/common/export',
+            verify: false,
+            admits: ['ADMIN_VIEW']
+          }
+        }
+      }
     }
     // common: {
     //   type: 'sub',
@@ -350,7 +371,18 @@ const config = {
 
 const Menu = () => {
   const { rows, props } = config
-  return <MenuConfig config={rows} {...props} />
+
+  return (
+    <MenuConfig
+      configs={[
+        {
+          collapse: false,
+          defaultCollapse: false,
+          config: rows
+        }
+      ]}
+    />
+  )
 }
 
 export default Menu
